@@ -1,0 +1,131 @@
+1->
+select fname,lname from employee
+left join department on 
+employee.ssn = department.ssn
+where dname = 'Administration' and fname Like '%M%'
+;
+
+
+2->
+select * from employee
+left join dependent on 
+employee.ssn = dependent.ssn
+where dependent.bdate between '2010-01-01' and '2014-01-01';
+
+3->
+select count(*) from employee
+left join department on 
+employee.ssn = department.ssn
+where employee.fname similar to '%[A-D]%'
+;
+
+
+4->
+select fname,lname from employee
+left join department on 
+employee.ssn = department.ssn
+where department.dname != 'Administration' and employee.fname not LIKE '%M%'
+;
+
+5->
+select fname,lname from employee
+left join department on 
+employee.dno = department.dno
+left join project on department.dno = project.dno
+where department.dname = 'Research' and project.pname = 'SEMICONDUCTOR'
+and project.plocation = 'Kolkata' and employee.sex = 'M'
+;
+
+
+6->
+select count(*) from employee
+left join department on 
+employee.dno = department.dno
+where department.dname = 'Administration' 
+and employee.ssn = department.ssn
+;
+
+7->
+select fname,sex,address from employee
+left join department on 
+employee.dno = department.dno
+where department.dname = 'Administration' 
+and employee.ssn = department.ssn
+group by fname,employee.sex,address
+;
+
+
+8->
+select fname,lname  from employee 
+left join department on 
+employee.ssn = department.ssn
+where (CURRENT_DATE - bdate)/365 < 45
+
+select fname,lname  from employee
+left join department on 
+employee.ssn != department.ssn 
+where (CURRENT_DATE - bdate)/365 > 45
+
+9->
+select dname,SUM(salary) from employee 
+left join department
+on employee.dno = department.dno
+group by dname
+;
+
+select dlocation,SUM(salary) from employee 
+left join department
+on employee.dno = department.dno
+left join dep_location
+on dep_location.dno = department.dno
+group by dlocation
+;
+
+10->
+
+
+
+11->
+select * from employee
+left join department on 
+employee.dno = department.dno
+where department.dname != 'Research'
+;
+
+
+13->
+select dname,count(*) as x from employee
+join department  ON department.dno = employee.dno
+group by dname 
+order by x desc limit 1
+;
+14 ->
+select pnumber from project
+left join department on  project.dno =department.dno 
+left join employee on department.dno = employee.dno
+where lname = '%Narayan%'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

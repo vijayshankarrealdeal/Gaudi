@@ -1,0 +1,3 @@
+https://firebasestorage.googleapis.com/v0/b/timetracker-d224d.appspot.com/o/train.zip?alt=media&token=0b668c23-5e98-4933-a7fa-adddbeac3304
+https://firebasestorage.googleapis.com/v0/b/timetracker-d224d.appspot.com/o/valid.zip?alt=media&token=74ab31ac-65f6-44cb-a4bb-fa673d91eadd
+

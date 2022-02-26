@@ -1,0 +1,7 @@
+torch
+numpy
+tqdm
+zipfile
+urllib
+pillow
+albumentations
